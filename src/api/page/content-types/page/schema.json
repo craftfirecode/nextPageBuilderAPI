@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "cms": {
+      "type": "dynamiczone",
+      "components": [
+        "cms.accordion",
+        "cms.button",
+        "cms.carousel",
+        "cms.content-image",
+        "cms.headline",
+        "cms.hero",
+        "cms.list",
+        "cms.margin",
+        "cms.modal",
+        "cms.v-hero",
+        "cms.post-category",
+        "cms.content",
+        "cms.coin-chart",
+        "cms.map",
+        "cms.rating",
+        "cms.screener",
+        "cms.presale"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.seo"
+    },
+    "sitemap": {
+      "type": "string"
+    }
+  }
+}

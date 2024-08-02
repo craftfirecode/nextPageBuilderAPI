@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_cms_collections",
+  "info": {
+    "displayName": "Collection"
+  },
+  "options": {},
+  "attributes": {
+    "endpoint": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_items_post_category_lists",
+  "info": {
+    "displayName": "PostCategoryList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "categoryList": {
+      "type": "enumeration",
+      "enum": [
+        "KI",
+        "React",
+        "WordPress",
+        "NextJs",
+        "Figma",
+        "WebUI",
+        "WebDev"
+      ]
+    }
+  }
+}

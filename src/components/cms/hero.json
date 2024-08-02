@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_cms_heroes",
+  "info": {
+    "displayName": "Hero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cms.button"
+    },
+    "vh": {
+      "type": "enumeration",
+      "enum": [
+        "vh-25",
+        "vh-50",
+        "vh-75",
+        "vh-100"
+      ]
+    },
+    "content": {
+      "type": "blocks"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_cms_ratings",
+  "info": {
+    "displayName": "Rating",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "communityRating": {
+      "type": "integer"
+    },
+    "vertrauenRating": {
+      "type": "integer"
+    },
+    "markttrendRating": {
+      "type": "integer"
+    }
+  }
+}

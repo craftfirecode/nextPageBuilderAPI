@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "category": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cms.post-category"
+    },
+    "cms": {
+      "type": "dynamiczone",
+      "components": [
+        "cms.accordion",
+        "cms.button",
+        "cms.carousel",
+        "cms.content-image",
+        "cms.headline",
+        "cms.hero",
+        "cms.list",
+        "cms.margin",
+        "cms.modal",
+        "cms.v-hero",
+        "cms.content",
+        "cms.post-category",
+        "cms.map",
+        "cms.rating",
+        "cms.coin-chart",
+        "cms.screener",
+        "cms.disclaimer",
+        "cms.social"
+      ]
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.seo"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "posts"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

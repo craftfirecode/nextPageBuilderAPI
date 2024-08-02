@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_cms_post_categories",
+  "info": {
+    "displayName": "PostCategory",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "category": {
+      "type": "component",
+      "repeatable": false,
+      "component": "items.post-category-list"
+    }
+  }
+}

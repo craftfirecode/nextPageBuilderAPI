@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_cms_presales",
+  "info": {
+    "displayName": "Presale"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

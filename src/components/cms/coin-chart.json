@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_cms_coin_charts",
+  "info": {
+    "displayName": "CoinChart"
+  },
+  "options": {},
+  "attributes": {
+    "symbol": {
+      "type": "string"
+    },
+    "height": {
+      "type": "string"
+    },
+    "interval": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "string"
+    }
+  }
+}

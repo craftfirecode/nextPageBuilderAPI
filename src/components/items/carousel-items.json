@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_items_carousel_items",
+  "info": {
+    "displayName": "CarouselItems",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "headline": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  }
+}

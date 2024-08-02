@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_cms_updates",
+  "info": {
+    "displayName": "Update"
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    }
+  }
+}
