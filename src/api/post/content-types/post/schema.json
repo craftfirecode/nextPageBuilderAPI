@@ -42,7 +42,8 @@
         "cms.coin-chart",
         "cms.screener",
         "cms.disclaimer",
-        "cms.social"
+        "cms.social",
+        "cms.image-grid"
       ]
     },
     "img": {

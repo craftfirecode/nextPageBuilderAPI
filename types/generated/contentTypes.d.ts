@@ -957,7 +957,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'cms.map',
         'cms.rating',
         'cms.screener',
-        'cms.presale'
+        'cms.presale',
+        'cms.image-grid'
       ]
     >;
     seo: Attribute.Component<'meta.seo'>;
@@ -1009,7 +1010,8 @@ export interface ApiPostPost extends Schema.CollectionType {
         'cms.coin-chart',
         'cms.screener',
         'cms.disclaimer',
-        'cms.social'
+        'cms.social',
+        'cms.image-grid'
       ]
     >;
     img: Attribute.Media<'images'>;

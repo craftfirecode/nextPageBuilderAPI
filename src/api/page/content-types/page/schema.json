@@ -30,7 +30,8 @@
         "cms.map",
         "cms.rating",
         "cms.screener",
-        "cms.presale"
+        "cms.presale",
+        "cms.image-grid"
       ]
     },
     "seo": {
