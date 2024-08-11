@@ -36,7 +36,18 @@ export interface ItemsPostCategoryList extends Schema.Component {
   };
   attributes: {
     categoryList: Attribute.Enumeration<
-      ['KI', 'React', 'WordPress', 'NextJs', 'Figma', 'WebUI', 'WebDev']
+      [
+        'KI',
+        'React',
+        'WordPress',
+        'NextJs',
+        'Figma',
+        'WebDesign',
+        'Frontend',
+        'IT',
+        'Algemein',
+        'othrt'
+      ]
     >;
   };
 }
