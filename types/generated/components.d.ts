@@ -135,31 +135,6 @@ export interface CmsUpdate extends Schema.Component {
   };
 }
 
-export interface CmsSocial extends Schema.Component {
-  collectionName: 'components_cms_socials';
-  info: {
-    displayName: 'Social';
-    description: '';
-  };
-  attributes: {
-    x: Attribute.String;
-    dex: Attribute.String;
-    page: Attribute.String;
-  };
-}
-
-export interface CmsScreener extends Schema.Component {
-  collectionName: 'components_cms_screeners';
-  info: {
-    displayName: 'Screener';
-    description: '';
-  };
-  attributes: {
-    theme: Attribute.String;
-    height: Attribute.String;
-  };
-}
-
 export interface CmsRating extends Schema.Component {
   collectionName: 'components_cms_ratings';
   info: {
@@ -170,16 +145,6 @@ export interface CmsRating extends Schema.Component {
     communityRating: Attribute.Integer;
     vertrauenRating: Attribute.Integer;
     markttrendRating: Attribute.Integer;
-  };
-}
-
-export interface CmsPresale extends Schema.Component {
-  collectionName: 'components_cms_presales';
-  info: {
-    displayName: 'Presale';
-  };
-  attributes: {
-    title: Attribute.String;
   };
 }
 
@@ -356,19 +321,6 @@ export interface CmsCollection extends Schema.Component {
   };
 }
 
-export interface CmsCoinChart extends Schema.Component {
-  collectionName: 'components_cms_coin_charts';
-  info: {
-    displayName: 'CoinChart';
-  };
-  attributes: {
-    symbol: Attribute.String;
-    height: Attribute.String;
-    interval: Attribute.String;
-    theme: Attribute.String;
-  };
-}
-
 export interface CmsCarousel extends Schema.Component {
   collectionName: 'components_cms_carousels';
   info: {
@@ -418,10 +370,7 @@ declare module '@strapi/types' {
       'items.accordion-items': ItemsAccordionItems;
       'cms.v-hero': CmsVHero;
       'cms.update': CmsUpdate;
-      'cms.social': CmsSocial;
-      'cms.screener': CmsScreener;
       'cms.rating': CmsRating;
-      'cms.presale': CmsPresale;
       'cms.post-category': CmsPostCategory;
       'cms.modal': CmsModal;
       'cms.margin': CmsMargin;
@@ -434,7 +383,6 @@ declare module '@strapi/types' {
       'cms.content': CmsContent;
       'cms.content-image': CmsContentImage;
       'cms.collection': CmsCollection;
-      'cms.coin-chart': CmsCoinChart;
       'cms.carousel': CmsCarousel;
       'cms.button': CmsButton;
       'cms.accordion': CmsAccordion;

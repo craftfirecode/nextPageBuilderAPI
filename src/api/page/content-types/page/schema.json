@@ -26,11 +26,8 @@
         "cms.v-hero",
         "cms.post-category",
         "cms.content",
-        "cms.coin-chart",
         "cms.map",
         "cms.rating",
-        "cms.screener",
-        "cms.presale",
         "cms.image-grid"
       ]
     },

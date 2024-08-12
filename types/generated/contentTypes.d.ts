@@ -953,11 +953,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'cms.v-hero',
         'cms.post-category',
         'cms.content',
-        'cms.coin-chart',
         'cms.map',
         'cms.rating',
-        'cms.screener',
-        'cms.presale',
         'cms.image-grid'
       ]
     >;
@@ -1007,10 +1004,7 @@ export interface ApiPostPost extends Schema.CollectionType {
         'cms.post-category',
         'cms.map',
         'cms.rating',
-        'cms.coin-chart',
-        'cms.screener',
         'cms.disclaimer',
-        'cms.social',
         'cms.image-grid'
       ]
     >;

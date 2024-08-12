@@ -39,10 +39,7 @@
         "cms.post-category",
         "cms.map",
         "cms.rating",
-        "cms.coin-chart",
-        "cms.screener",
         "cms.disclaimer",
-        "cms.social",
         "cms.image-grid"
       ]
     },
