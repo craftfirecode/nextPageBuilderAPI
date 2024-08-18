@@ -8,6 +8,10 @@
   "attributes": {
     "content": {
       "type": "blocks"
+    },
+    "center": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

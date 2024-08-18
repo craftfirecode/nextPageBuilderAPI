@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface MetaSeo extends Schema.Component {
+  collectionName: 'components_meta_seos';
+  info: {
+    displayName: 'SEO';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface NavNav extends Schema.Component {
   collectionName: 'components_nav_navs';
   info: {
@@ -12,101 +25,6 @@ export interface NavNav extends Schema.Component {
     page: Attribute.Relation<'nav.nav', 'oneToOne', 'api::page.page'>;
     submenu: Attribute.Component<'items.nav-items', true>;
     hidden: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface ItemsPostCategoryList extends Schema.Component {
-  collectionName: 'components_items_post_category_lists';
-  info: {
-    displayName: 'PostCategoryList';
-    description: '';
-  };
-  attributes: {
-    categoryList: Attribute.Enumeration<
-      [
-        'KI',
-        'React',
-        'WordPress',
-        'NextJs',
-        'Figma',
-        'WebDesign',
-        'Frontend',
-        'IT',
-        'Algemein',
-        'othrt'
-      ]
-    >;
-  };
-}
-
-export interface ItemsNavItems extends Schema.Component {
-  collectionName: 'components_items_nav_items';
-  info: {
-    displayName: 'NavItems';
-  };
-  attributes: {
-    title: Attribute.String;
-    link: Attribute.String;
-    page: Attribute.Relation<'items.nav-items', 'oneToOne', 'api::page.page'>;
-  };
-}
-
-export interface ItemsListItems extends Schema.Component {
-  collectionName: 'components_cms_list_items';
-  info: {
-    displayName: 'ListItems';
-    description: '';
-  };
-  attributes: {
-    content: Attribute.Text;
-  };
-}
-
-export interface ItemsImageItems extends Schema.Component {
-  collectionName: 'components_items_image_items';
-  info: {
-    displayName: 'ImageItems';
-  };
-  attributes: {
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-  };
-}
-
-export interface ItemsCarouselItems extends Schema.Component {
-  collectionName: 'components_items_carousel_items';
-  info: {
-    displayName: 'CarouselItems';
-    description: '';
-  };
-  attributes: {
-    img: Attribute.Media<'images'>;
-    headline: Attribute.String;
-    content: Attribute.String;
-  };
-}
-
-export interface ItemsAccordionItems extends Schema.Component {
-  collectionName: 'components_cms_accordion_items';
-  info: {
-    displayName: 'AccordionItems';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    content: Attribute.Blocks;
-  };
-}
-
-export interface MetaSeo extends Schema.Component {
-  collectionName: 'components_meta_seos';
-  info: {
-    displayName: 'SEO';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -294,6 +212,7 @@ export interface CmsContent extends Schema.Component {
   };
   attributes: {
     content: Attribute.Blocks;
+    center: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -357,17 +276,93 @@ export interface CmsAccordion extends Schema.Component {
   };
 }
 
+export interface ItemsPostCategoryList extends Schema.Component {
+  collectionName: 'components_items_post_category_lists';
+  info: {
+    displayName: 'PostCategoryList';
+    description: '';
+  };
+  attributes: {
+    categoryList: Attribute.Enumeration<
+      [
+        'KI',
+        'React',
+        'WordPress',
+        'NextJs',
+        'Figma',
+        'WebDesign',
+        'Frontend',
+        'IT',
+        'Algemein',
+        'othrt'
+      ]
+    >;
+  };
+}
+
+export interface ItemsNavItems extends Schema.Component {
+  collectionName: 'components_items_nav_items';
+  info: {
+    displayName: 'NavItems';
+  };
+  attributes: {
+    title: Attribute.String;
+    link: Attribute.String;
+    page: Attribute.Relation<'items.nav-items', 'oneToOne', 'api::page.page'>;
+  };
+}
+
+export interface ItemsListItems extends Schema.Component {
+  collectionName: 'components_cms_list_items';
+  info: {
+    displayName: 'ListItems';
+    description: '';
+  };
+  attributes: {
+    content: Attribute.Text;
+  };
+}
+
+export interface ItemsImageItems extends Schema.Component {
+  collectionName: 'components_items_image_items';
+  info: {
+    displayName: 'ImageItems';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+  };
+}
+
+export interface ItemsCarouselItems extends Schema.Component {
+  collectionName: 'components_items_carousel_items';
+  info: {
+    displayName: 'CarouselItems';
+    description: '';
+  };
+  attributes: {
+    img: Attribute.Media<'images'>;
+    headline: Attribute.String;
+    content: Attribute.String;
+  };
+}
+
+export interface ItemsAccordionItems extends Schema.Component {
+  collectionName: 'components_cms_accordion_items';
+  info: {
+    displayName: 'AccordionItems';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.Blocks;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'nav.nav': NavNav;
-      'items.post-category-list': ItemsPostCategoryList;
-      'items.nav-items': ItemsNavItems;
-      'items.list-items': ItemsListItems;
-      'items.image-items': ItemsImageItems;
-      'items.carousel-items': ItemsCarouselItems;
-      'items.accordion-items': ItemsAccordionItems;
       'meta.seo': MetaSeo;
+      'nav.nav': NavNav;
       'cms.v-hero': CmsVHero;
       'cms.update': CmsUpdate;
       'cms.rating': CmsRating;
@@ -386,6 +381,12 @@ declare module '@strapi/types' {
       'cms.carousel': CmsCarousel;
       'cms.button': CmsButton;
       'cms.accordion': CmsAccordion;
+      'items.post-category-list': ItemsPostCategoryList;
+      'items.nav-items': ItemsNavItems;
+      'items.list-items': ItemsListItems;
+      'items.image-items': ItemsImageItems;
+      'items.carousel-items': ItemsCarouselItems;
+      'items.accordion-items': ItemsAccordionItems;
     }
   }
 }
