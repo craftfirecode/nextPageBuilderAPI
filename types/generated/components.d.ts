@@ -1,18 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface MetaSeo extends Schema.Component {
-  collectionName: 'components_meta_seos';
-  info: {
-    displayName: 'SEO';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
 export interface NavNav extends Schema.Component {
   collectionName: 'components_nav_navs';
   info: {
@@ -110,6 +97,19 @@ export interface ItemsAccordionItems extends Schema.Component {
   };
 }
 
+export interface MetaSeo extends Schema.Component {
+  collectionName: 'components_meta_seos';
+  info: {
+    displayName: 'SEO';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface CmsVHero extends Schema.Component {
   collectionName: 'components_cms_v_heroes';
   info: {
@@ -142,9 +142,9 @@ export interface CmsRating extends Schema.Component {
     description: '';
   };
   attributes: {
-    communityRating: Attribute.Integer;
-    vertrauenRating: Attribute.Integer;
-    markttrendRating: Attribute.Integer;
+    rating0: Attribute.Integer;
+    rating1: Attribute.Integer;
+    rating2: Attribute.Integer;
   };
 }
 
@@ -360,7 +360,6 @@ export interface CmsAccordion extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'meta.seo': MetaSeo;
       'nav.nav': NavNav;
       'items.post-category-list': ItemsPostCategoryList;
       'items.nav-items': ItemsNavItems;
@@ -368,6 +367,7 @@ declare module '@strapi/types' {
       'items.image-items': ItemsImageItems;
       'items.carousel-items': ItemsCarouselItems;
       'items.accordion-items': ItemsAccordionItems;
+      'meta.seo': MetaSeo;
       'cms.v-hero': CmsVHero;
       'cms.update': CmsUpdate;
       'cms.rating': CmsRating;

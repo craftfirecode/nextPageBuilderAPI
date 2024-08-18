@@ -6,13 +6,13 @@
   },
   "options": {},
   "attributes": {
-    "communityRating": {
+    "rating0": {
       "type": "integer"
     },
-    "vertrauenRating": {
+    "rating1": {
       "type": "integer"
     },
-    "markttrendRating": {
+    "rating2": {
       "type": "integer"
     }
   }
