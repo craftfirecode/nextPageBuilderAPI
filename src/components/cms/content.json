@@ -12,11 +12,6 @@
     "center": {
       "type": "boolean",
       "default": false
-    },
-    "col": {
-      "type": "component",
-      "repeatable": false,
-      "component": "view.col"
     }
   }
 }
