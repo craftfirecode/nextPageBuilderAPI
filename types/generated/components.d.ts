@@ -1,15 +1,14 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface MetaSeo extends Schema.Component {
-  collectionName: 'components_meta_seos';
+export interface ViewCol extends Schema.Component {
+  collectionName: 'components_view_cols';
   info: {
-    displayName: 'SEO';
-    description: '';
+    displayName: 'col';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    col: Attribute.Enumeration<
+      ['two', 'four', 'six', 'eight', 'ten', 'twelve']
+    >;
   };
 }
 
@@ -25,6 +24,19 @@ export interface NavNav extends Schema.Component {
     page: Attribute.Relation<'nav.nav', 'oneToOne', 'api::page.page'>;
     submenu: Attribute.Component<'items.nav-items', true>;
     hidden: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface MetaSeo extends Schema.Component {
+  collectionName: 'components_meta_seos';
+  info: {
+    displayName: 'SEO';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -213,6 +225,7 @@ export interface CmsContent extends Schema.Component {
   attributes: {
     content: Attribute.Blocks;
     center: Attribute.Boolean & Attribute.DefaultTo<false>;
+    col: Attribute.Component<'view.col'>;
   };
 }
 
@@ -361,8 +374,9 @@ export interface ItemsAccordionItems extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'meta.seo': MetaSeo;
+      'view.col': ViewCol;
       'nav.nav': NavNav;
+      'meta.seo': MetaSeo;
       'cms.v-hero': CmsVHero;
       'cms.update': CmsUpdate;
       'cms.rating': CmsRating;
