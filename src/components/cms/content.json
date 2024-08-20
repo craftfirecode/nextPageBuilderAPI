@@ -12,6 +12,11 @@
     "center": {
       "type": "boolean",
       "default": false
+    },
+    "col": {
+      "type": "component",
+      "repeatable": true,
+      "component": "col.col"
     }
   }
 }
