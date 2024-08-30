@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface MetaSeo extends Schema.Component {
+  collectionName: 'components_meta_seos';
+  info: {
+    displayName: 'SEO';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface NavNav extends Schema.Component {
   collectionName: 'components_nav_navs';
   info: {
@@ -12,19 +25,6 @@ export interface NavNav extends Schema.Component {
     page: Attribute.Relation<'nav.nav', 'oneToOne', 'api::page.page'>;
     submenu: Attribute.Component<'items.nav-items', true>;
     hidden: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface MetaSeo extends Schema.Component {
-  collectionName: 'components_meta_seos';
-  info: {
-    displayName: 'SEO';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -261,6 +261,8 @@ export interface CmsHero extends Schema.Component {
     button: Attribute.Component<'cms.button'>;
     vh: Attribute.Enumeration<['vh-25', 'vh-50', 'vh-75', 'vh-100']>;
     content: Attribute.Component<'cms.content'>;
+    background: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -363,8 +365,8 @@ export interface CmsAccordion extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'nav.nav': NavNav;
       'meta.seo': MetaSeo;
+      'nav.nav': NavNav;
       'items.post-category-list': ItemsPostCategoryList;
       'items.nav-items': ItemsNavItems;
       'items.list-items': ItemsListItems;
