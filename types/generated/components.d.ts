@@ -110,16 +110,6 @@ export interface ItemsAccordionItems extends Schema.Component {
   };
 }
 
-export interface ColCol extends Schema.Component {
-  collectionName: 'components_col_cols';
-  info: {
-    displayName: 'Col';
-  };
-  attributes: {
-    col: Attribute.Enumeration<['w25', 'w50', 'w75']>;
-  };
-}
-
 export interface CmsVHero extends Schema.Component {
   collectionName: 'components_cms_v_heroes';
   info: {
@@ -270,7 +260,7 @@ export interface CmsHero extends Schema.Component {
     img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     button: Attribute.Component<'cms.button'>;
     vh: Attribute.Enumeration<['vh-25', 'vh-50', 'vh-75', 'vh-100']>;
-    content: Attribute.Blocks;
+    content: Attribute.Component<'cms.content'>;
   };
 }
 
@@ -305,7 +295,8 @@ export interface CmsContent extends Schema.Component {
   attributes: {
     content: Attribute.Blocks;
     center: Attribute.Boolean & Attribute.DefaultTo<false>;
-    col: Attribute.Component<'col.col', true>;
+    color: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -380,7 +371,6 @@ declare module '@strapi/types' {
       'items.image-items': ItemsImageItems;
       'items.carousel-items': ItemsCarouselItems;
       'items.accordion-items': ItemsAccordionItems;
-      'col.col': ColCol;
       'cms.v-hero': CmsVHero;
       'cms.update': CmsUpdate;
       'cms.rating': CmsRating;

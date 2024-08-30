@@ -32,7 +32,9 @@
       ]
     },
     "content": {
-      "type": "blocks"
+      "type": "component",
+      "repeatable": false,
+      "component": "cms.content"
     }
   }
 }
