@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_items_level_items",
+  "info": {
+    "displayName": "LevelItems"
+  },
+  "options": {},
+  "attributes": {
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "Low-Level",
+        "Middle-Level",
+        "High-Level"
+      ]
+    }
+  }
+}

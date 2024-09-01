@@ -12,15 +12,18 @@
   },
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "category": {
       "type": "component",
       "repeatable": false,
-      "component": "cms.post-category"
+      "component": "cms.post-category",
+      "required": true
     },
     "cms": {
       "type": "dynamiczone",
@@ -46,7 +49,7 @@
     "img": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
@@ -64,6 +67,11 @@
     },
     "url": {
       "type": "string"
+    },
+    "level": {
+      "type": "component",
+      "repeatable": false,
+      "component": "items.level-items"
     }
   }
 }

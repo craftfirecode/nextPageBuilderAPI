@@ -985,9 +985,9 @@ export interface ApiPostPost extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-    category: Attribute.Component<'cms.post-category'>;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    category: Attribute.Component<'cms.post-category'> & Attribute.Required;
     cms: Attribute.DynamicZone<
       [
         'cms.accordion',
@@ -1008,7 +1008,7 @@ export interface ApiPostPost extends Schema.CollectionType {
         'cms.image-grid'
       ]
     >;
-    img: Attribute.Media<'images'>;
+    img: Attribute.Media<'images'> & Attribute.Required;
     seo: Attribute.Component<'meta.seo'>;
     author: Attribute.Relation<
       'api::post.post',
@@ -1016,6 +1016,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::author.author'
     >;
     url: Attribute.String;
+    level: Attribute.Component<'items.level-items'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
