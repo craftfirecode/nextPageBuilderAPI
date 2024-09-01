@@ -10,6 +10,10 @@
       "type": "component",
       "repeatable": false,
       "component": "items.post-category-list"
+    },
+    "filter": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
