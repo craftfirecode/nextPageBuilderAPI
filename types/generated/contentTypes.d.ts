@@ -1005,7 +1005,8 @@ export interface ApiPostPost extends Schema.CollectionType {
         'cms.map',
         'cms.rating',
         'cms.disclaimer',
-        'cms.image-grid'
+        'cms.image-grid',
+        'cms.code-block'
       ]
     >;
     img: Attribute.Media<'images'> & Attribute.Required;

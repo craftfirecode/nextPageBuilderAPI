@@ -43,7 +43,8 @@
         "cms.map",
         "cms.rating",
         "cms.disclaimer",
-        "cms.image-grid"
+        "cms.image-grid",
+        "cms.code-block"
       ]
     },
     "img": {

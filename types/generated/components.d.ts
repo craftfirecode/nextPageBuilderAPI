@@ -337,6 +337,17 @@ export interface CmsCollection extends Schema.Component {
   };
 }
 
+export interface CmsCodeBlock extends Schema.Component {
+  collectionName: 'components_cms_code_blocks';
+  info: {
+    displayName: 'CodeBlock';
+    description: '';
+  };
+  attributes: {
+    code: Attribute.Text;
+  };
+}
+
 export interface CmsCarousel extends Schema.Component {
   collectionName: 'components_cms_carousels';
   info: {
@@ -400,6 +411,7 @@ declare module '@strapi/types' {
       'cms.content': CmsContent;
       'cms.content-image': CmsContentImage;
       'cms.collection': CmsCollection;
+      'cms.code-block': CmsCodeBlock;
       'cms.carousel': CmsCarousel;
       'cms.button': CmsButton;
       'cms.accordion': CmsAccordion;
