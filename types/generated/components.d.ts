@@ -15,19 +15,6 @@ export interface NavNav extends Schema.Component {
   };
 }
 
-export interface MetaSeo extends Schema.Component {
-  collectionName: 'components_meta_seos';
-  info: {
-    displayName: 'SEO';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
 export interface ItemsPostCategoryList extends Schema.Component {
   collectionName: 'components_items_post_category_lists';
   info: {
@@ -120,6 +107,19 @@ export interface ItemsAccordionItems extends Schema.Component {
   };
 }
 
+export interface MetaSeo extends Schema.Component {
+  collectionName: 'components_meta_seos';
+  info: {
+    displayName: 'SEO';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    ogImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface CmsVHero extends Schema.Component {
   collectionName: 'components_cms_v_heroes';
   info: {
@@ -167,6 +167,7 @@ export interface CmsPostCategory extends Schema.Component {
   attributes: {
     category: Attribute.Component<'items.post-category-list'>;
     filter: Attribute.Boolean & Attribute.DefaultTo<false>;
+    limit: Attribute.Integer;
   };
 }
 
@@ -388,7 +389,6 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'nav.nav': NavNav;
-      'meta.seo': MetaSeo;
       'items.post-category-list': ItemsPostCategoryList;
       'items.nav-items': ItemsNavItems;
       'items.list-items': ItemsListItems;
@@ -396,6 +396,7 @@ declare module '@strapi/types' {
       'items.image-items': ItemsImageItems;
       'items.carousel-items': ItemsCarouselItems;
       'items.accordion-items': ItemsAccordionItems;
+      'meta.seo': MetaSeo;
       'cms.v-hero': CmsVHero;
       'cms.update': CmsUpdate;
       'cms.rating': CmsRating;

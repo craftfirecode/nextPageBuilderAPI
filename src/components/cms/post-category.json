@@ -14,6 +14,9 @@
     "filter": {
       "type": "boolean",
       "default": false
+    },
+    "limit": {
+      "type": "integer"
     }
   }
 }
