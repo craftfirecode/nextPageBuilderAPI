@@ -28,95 +28,13 @@ export interface MetaSeo extends Schema.Component {
   };
 }
 
-export interface ItemsPostCategoryList extends Schema.Component {
-  collectionName: 'components_items_post_category_lists';
+export interface CoreContentWidth extends Schema.Component {
+  collectionName: 'components_core_content_widths';
   info: {
-    displayName: 'PostCategoryList';
-    description: '';
+    displayName: 'ContentWidth';
   };
   attributes: {
-    categoryList: Attribute.Enumeration<
-      [
-        'KI',
-        'React',
-        'WordPress',
-        'NextJs',
-        'Figma',
-        'WebDesign',
-        'Frontend',
-        'IT',
-        'Algemein',
-        'othrt'
-      ]
-    >;
-  };
-}
-
-export interface ItemsNavItems extends Schema.Component {
-  collectionName: 'components_items_nav_items';
-  info: {
-    displayName: 'NavItems';
-  };
-  attributes: {
-    title: Attribute.String;
-    link: Attribute.String;
-    page: Attribute.Relation<'items.nav-items', 'oneToOne', 'api::page.page'>;
-  };
-}
-
-export interface ItemsListItems extends Schema.Component {
-  collectionName: 'components_cms_list_items';
-  info: {
-    displayName: 'ListItems';
-    description: '';
-  };
-  attributes: {
-    content: Attribute.Text;
-  };
-}
-
-export interface ItemsLevelItems extends Schema.Component {
-  collectionName: 'components_items_level_items';
-  info: {
-    displayName: 'LevelItems';
-  };
-  attributes: {
-    level: Attribute.Enumeration<['Low-Level', 'Middle-Level', 'High-Level']>;
-  };
-}
-
-export interface ItemsImageItems extends Schema.Component {
-  collectionName: 'components_items_image_items';
-  info: {
-    displayName: 'ImageItems';
-  };
-  attributes: {
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-  };
-}
-
-export interface ItemsCarouselItems extends Schema.Component {
-  collectionName: 'components_items_carousel_items';
-  info: {
-    displayName: 'CarouselItems';
-    description: '';
-  };
-  attributes: {
-    img: Attribute.Media<'images'>;
-    headline: Attribute.String;
-    content: Attribute.String;
-  };
-}
-
-export interface ItemsAccordionItems extends Schema.Component {
-  collectionName: 'components_cms_accordion_items';
-  info: {
-    displayName: 'AccordionItems';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    content: Attribute.Blocks;
+    width: Attribute.Enumeration<['w-100', 'w-75', 'w-50', 'w-25']>;
   };
 }
 
@@ -251,6 +169,20 @@ export interface CmsList extends Schema.Component {
   };
 }
 
+export interface CmsImage extends Schema.Component {
+  collectionName: 'components_cms_images';
+  info: {
+    displayName: 'Image';
+    description: '';
+  };
+  attributes: {
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imgSmall: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imgDark: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imgSmallDark: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface CmsImageGrid extends Schema.Component {
   collectionName: 'components_cms_image_grids';
   info: {
@@ -311,6 +243,7 @@ export interface CmsContent extends Schema.Component {
     center: Attribute.Boolean & Attribute.DefaultTo<false>;
     color: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
+    width: Attribute.Enumeration<['w-100', 'w-75', 'w-50', 'w-25']>;
   };
 }
 
@@ -325,6 +258,7 @@ export interface CmsContentImage extends Schema.Component {
     image: Attribute.Media<'images'>;
     reverse: Attribute.Boolean & Attribute.DefaultTo<false>;
     content: Attribute.Blocks;
+    imgDark: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -385,18 +319,104 @@ export interface CmsAccordion extends Schema.Component {
   };
 }
 
+export interface ItemsPostCategoryList extends Schema.Component {
+  collectionName: 'components_items_post_category_lists';
+  info: {
+    displayName: 'PostCategoryList';
+    description: '';
+  };
+  attributes: {
+    categoryList: Attribute.Enumeration<
+      [
+        'KI',
+        'React',
+        'WordPress',
+        'NextJs',
+        'Figma',
+        'WebDesign',
+        'Frontend',
+        'IT',
+        'Algemein',
+        'othrt'
+      ]
+    >;
+  };
+}
+
+export interface ItemsNavItems extends Schema.Component {
+  collectionName: 'components_items_nav_items';
+  info: {
+    displayName: 'NavItems';
+  };
+  attributes: {
+    title: Attribute.String;
+    link: Attribute.String;
+    page: Attribute.Relation<'items.nav-items', 'oneToOne', 'api::page.page'>;
+  };
+}
+
+export interface ItemsListItems extends Schema.Component {
+  collectionName: 'components_cms_list_items';
+  info: {
+    displayName: 'ListItems';
+    description: '';
+  };
+  attributes: {
+    content: Attribute.Text;
+  };
+}
+
+export interface ItemsLevelItems extends Schema.Component {
+  collectionName: 'components_items_level_items';
+  info: {
+    displayName: 'LevelItems';
+  };
+  attributes: {
+    level: Attribute.Enumeration<['Low-Level', 'Middle-Level', 'High-Level']>;
+  };
+}
+
+export interface ItemsImageItems extends Schema.Component {
+  collectionName: 'components_items_image_items';
+  info: {
+    displayName: 'ImageItems';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+  };
+}
+
+export interface ItemsCarouselItems extends Schema.Component {
+  collectionName: 'components_items_carousel_items';
+  info: {
+    displayName: 'CarouselItems';
+    description: '';
+  };
+  attributes: {
+    img: Attribute.Media<'images'>;
+    headline: Attribute.String;
+    content: Attribute.String;
+  };
+}
+
+export interface ItemsAccordionItems extends Schema.Component {
+  collectionName: 'components_cms_accordion_items';
+  info: {
+    displayName: 'AccordionItems';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.Blocks;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'nav.nav': NavNav;
       'meta.seo': MetaSeo;
-      'items.post-category-list': ItemsPostCategoryList;
-      'items.nav-items': ItemsNavItems;
-      'items.list-items': ItemsListItems;
-      'items.level-items': ItemsLevelItems;
-      'items.image-items': ItemsImageItems;
-      'items.carousel-items': ItemsCarouselItems;
-      'items.accordion-items': ItemsAccordionItems;
+      'core.content-width': CoreContentWidth;
       'cms.v-hero': CmsVHero;
       'cms.update': CmsUpdate;
       'cms.rating': CmsRating;
@@ -405,6 +425,7 @@ declare module '@strapi/types' {
       'cms.margin': CmsMargin;
       'cms.map': CmsMap;
       'cms.list': CmsList;
+      'cms.image': CmsImage;
       'cms.image-grid': CmsImageGrid;
       'cms.hero': CmsHero;
       'cms.headline': CmsHeadline;
@@ -416,6 +437,13 @@ declare module '@strapi/types' {
       'cms.carousel': CmsCarousel;
       'cms.button': CmsButton;
       'cms.accordion': CmsAccordion;
+      'items.post-category-list': ItemsPostCategoryList;
+      'items.nav-items': ItemsNavItems;
+      'items.list-items': ItemsListItems;
+      'items.level-items': ItemsLevelItems;
+      'items.image-items': ItemsImageItems;
+      'items.carousel-items': ItemsCarouselItems;
+      'items.accordion-items': ItemsAccordionItems;
     }
   }
 }

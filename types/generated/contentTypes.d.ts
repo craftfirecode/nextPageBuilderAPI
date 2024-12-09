@@ -955,7 +955,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'cms.content',
         'cms.map',
         'cms.rating',
-        'cms.image-grid'
+        'cms.image-grid',
+        'cms.image'
       ]
     >;
     seo: Attribute.Component<'meta.seo'>;

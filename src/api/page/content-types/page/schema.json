@@ -28,7 +28,8 @@
         "cms.content",
         "cms.map",
         "cms.rating",
-        "cms.image-grid"
+        "cms.image-grid",
+        "cms.image"
       ]
     },
     "seo": {
