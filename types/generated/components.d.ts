@@ -120,16 +120,6 @@ export interface ItemsAccordionItems extends Schema.Component {
   };
 }
 
-export interface CoreContentWidth extends Schema.Component {
-  collectionName: 'components_core_content_widths';
-  info: {
-    displayName: 'ContentWidth';
-  };
-  attributes: {
-    width: Attribute.Enumeration<['w-100', 'w-75', 'w-50', 'w-25']>;
-  };
-}
-
 export interface CmsVHero extends Schema.Component {
   collectionName: 'components_cms_v_heroes';
   info: {
@@ -411,6 +401,16 @@ export interface CmsAccordion extends Schema.Component {
   };
 }
 
+export interface CoreContentWidth extends Schema.Component {
+  collectionName: 'components_core_content_widths';
+  info: {
+    displayName: 'ContentWidth';
+  };
+  attributes: {
+    width: Attribute.Enumeration<['w-100', 'w-75', 'w-50', 'w-25']>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -423,7 +423,6 @@ declare module '@strapi/types' {
       'items.image-items': ItemsImageItems;
       'items.carousel-items': ItemsCarouselItems;
       'items.accordion-items': ItemsAccordionItems;
-      'core.content-width': CoreContentWidth;
       'cms.v-hero': CmsVHero;
       'cms.update': CmsUpdate;
       'cms.rating': CmsRating;
@@ -444,6 +443,7 @@ declare module '@strapi/types' {
       'cms.carousel': CmsCarousel;
       'cms.button': CmsButton;
       'cms.accordion': CmsAccordion;
+      'core.content-width': CoreContentWidth;
     }
   }
 }
