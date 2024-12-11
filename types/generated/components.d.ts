@@ -268,7 +268,7 @@ export interface ItemsPostCategoryList extends Struct.ComponentSchema {
   };
   attributes: {
     categoryList: Schema.Attribute.Enumeration<
-      ['Frontend', 'Backend', 'UI/UX Design', 'Figma']
+      ['Frontend', 'Backend', 'UI/UX Design', 'Figma', 'all']
     >;
     filter: Schema.Attribute.Boolean;
     limit: Schema.Attribute.Integer;
