@@ -11,13 +11,16 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^4.0.11",
     "@strapi/plugin-cloud": "5.5.0",
+    "@strapi/plugin-color-picker": "^5.5.0",
     "@strapi/plugin-users-permissions": "5.5.0",
     "@strapi/strapi": "5.5.0",
     "better-sqlite3": "11.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "strapi-plugin-populate-deep": "^3.0.1",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
