@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "posts"
+    },
+    "category": {
+      "type": "component",
+      "repeatable": false,
+      "component": "items.post-category-list"
+    },
+    "cms": {
+      "type": "dynamiczone",
+      "components": [
+        "cms.v-hero",
+        "cms.rating",
+        "cms.post-category",
+        "cms.modal",
+        "cms.margin",
+        "cms.image",
+        "cms.image-grid",
+        "cms.hero",
+        "cms.content",
+        "cms.content-image",
+        "cms.code-block",
+        "cms.carouse",
+        "cms.button",
+        "cms.accordion"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.seo"
+    },
+    "level": {
+      "type": "component",
+      "repeatable": false,
+      "component": "items.level-items"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

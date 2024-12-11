@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_cms_ratings",
+  "info": {
+    "displayName": "Rating"
+  },
+  "options": {},
+  "attributes": {
+    "rating0": {
+      "type": "integer"
+    },
+    "rating1": {
+      "type": "integer"
+    },
+    "rating2": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_cms_post_categories",
+  "info": {
+    "displayName": "PostCategory"
+  },
+  "options": {},
+  "attributes": {
+    "category": {
+      "type": "component",
+      "repeatable": true,
+      "component": "items.post-category-list"
+    },
+    "filter": {
+      "type": "boolean"
+    },
+    "limit": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_cms_image_grids",
+  "info": {
+    "displayName": "ImageGrid"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

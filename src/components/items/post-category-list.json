@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_items_post_category_lists",
+  "info": {
+    "displayName": "PostCategoryList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "categoryList": {
+      "type": "enumeration",
+      "enum": [
+        "Frontend",
+        "Backend",
+        "UI/UX Design",
+        "Figma"
+      ]
+    },
+    "filter": {
+      "type": "boolean"
+    },
+    "limit": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_cms_carouses",
+  "info": {
+    "displayName": "Carouse"
+  },
+  "options": {},
+  "attributes": {
+    "carousel": {
+      "type": "component",
+      "repeatable": true,
+      "component": "items.carousel-items"
+    },
+    "vh": {
+      "type": "enumeration",
+      "enum": [
+        "vh-100",
+        "vh-75",
+        "vh-50",
+        "vh-25"
+      ]
+    }
+  }
+}

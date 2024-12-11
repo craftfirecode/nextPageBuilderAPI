@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_cms_buttons",
+  "info": {
+    "displayName": "Button"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "style": {
+      "type": "enumeration",
+      "enum": [
+        "btn-primary",
+        "btn-secondary"
+      ]
+    }
+  }
+}
