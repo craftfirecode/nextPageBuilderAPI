@@ -1,21 +1,11 @@
 {
   "collectionName": "components_cms_contents",
   "info": {
-    "displayName": "Content"
+    "displayName": "Content",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "content": {
-      "type": "blocks"
-    },
-    "center": {
-      "type": "boolean"
-    },
-    "color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
     "width": {
       "type": "enumeration",
       "enum": [
@@ -24,6 +14,13 @@
         "w-50",
         "w-25"
       ]
+    },
+    "wysiwyg": {
+      "type": "customField",
+      "options": {
+        "preset": "default"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

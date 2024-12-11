@@ -33,38 +33,39 @@ export interface CmsCarouse extends Struct.ComponentSchema {
   };
 }
 
-export interface CmsCodeBlock extends Struct.ComponentSchema {
-  collectionName: 'components_cms_code_blocks';
-  info: {
-    displayName: 'CodeBlock';
-  };
-  attributes: {
-    code: Schema.Attribute.Text;
-  };
-}
-
 export interface CmsContent extends Struct.ComponentSchema {
   collectionName: 'components_cms_contents';
   info: {
+    description: '';
     displayName: 'Content';
   };
   attributes: {
-    center: Schema.Attribute.Boolean;
-    color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    content: Schema.Attribute.Blocks;
     width: Schema.Attribute.Enumeration<['w-100', 'w-75', 'w-50', 'w-25']>;
+    wysiwyg: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'default';
+        }
+      >;
   };
 }
 
 export interface CmsContentImage extends Struct.ComponentSchema {
   collectionName: 'components_cms_content_images';
   info: {
+    description: '';
     displayName: 'ContentImage';
   };
   attributes: {
     button: Schema.Attribute.Component<'cms.button', false>;
-    content: Schema.Attribute.Blocks;
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'default';
+        }
+      >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     imgDark: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     reverse: Schema.Attribute.Boolean;
@@ -166,14 +167,21 @@ export interface CmsRating extends Struct.ComponentSchema {
 export interface CmsVHero extends Struct.ComponentSchema {
   collectionName: 'components_cms_v_heroes';
   info: {
+    description: '';
     displayName: 'VHero';
   };
   attributes: {
     button: Schema.Attribute.Component<'cms.button', false>;
-    content: Schema.Attribute.Blocks;
     file: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     mask: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     vh: Schema.Attribute.Enumeration<['vh-100', 'vh-75', 'vh-50', 'vh-25']>;
+    wysiwyg: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'default';
+        }
+      >;
   };
 }
 
@@ -300,7 +308,6 @@ declare module '@strapi/strapi' {
       'cms.accordion': CmsAccordion;
       'cms.button': CmsButton;
       'cms.carouse': CmsCarouse;
-      'cms.code-block': CmsCodeBlock;
       'cms.content': CmsContent;
       'cms.content-image': CmsContentImage;
       'cms.hero': CmsHero;

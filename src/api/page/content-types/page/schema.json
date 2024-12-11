@@ -28,7 +28,6 @@
         "cms.hero",
         "cms.content",
         "cms.content-image",
-        "cms.code-block",
         "cms.carouse",
         "cms.button",
         "cms.accordion"

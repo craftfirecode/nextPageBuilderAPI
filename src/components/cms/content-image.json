@@ -1,7 +1,8 @@
 {
   "collectionName": "components_cms_content_images",
   "info": {
-    "displayName": "ContentImage"
+    "displayName": "ContentImage",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,30 +12,36 @@
       "component": "cms.button"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "reverse": {
       "type": "boolean"
     },
-    "content": {
-      "type": "blocks"
-    },
     "imgDark": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "default"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
