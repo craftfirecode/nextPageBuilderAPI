@@ -22,14 +22,13 @@ export interface CmsButton extends Struct.ComponentSchema {
   };
 }
 
-export interface CmsCarouse extends Struct.ComponentSchema {
-  collectionName: 'components_cms_carouses';
+export interface CmsCarousel extends Struct.ComponentSchema {
+  collectionName: 'components_cms_carousels';
   info: {
-    displayName: 'Carouse';
+    displayName: 'Carousel';
   };
   attributes: {
-    carousel: Schema.Attribute.Component<'items.carousel-items', true>;
-    vh: Schema.Attribute.Enumeration<['vh-100', 'vh-75', 'vh-50', 'vh-25']>;
+    items: Schema.Attribute.Component<'items.carousel-items', true>;
   };
 }
 
@@ -307,7 +306,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'cms.accordion': CmsAccordion;
       'cms.button': CmsButton;
-      'cms.carouse': CmsCarouse;
+      'cms.carousel': CmsCarousel;
       'cms.content': CmsContent;
       'cms.content-image': CmsContentImage;
       'cms.hero': CmsHero;

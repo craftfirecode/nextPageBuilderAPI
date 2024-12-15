@@ -425,9 +425,9 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'cms.hero',
         'cms.content',
         'cms.content-image',
-        'cms.carouse',
         'cms.button',
         'cms.accordion',
+        'cms.carousel',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -471,7 +471,6 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
         'cms.hero',
         'cms.content',
         'cms.content-image',
-        'cms.carouse',
         'cms.button',
         'cms.accordion',
       ]
