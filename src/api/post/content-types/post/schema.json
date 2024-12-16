@@ -54,7 +54,8 @@
         "cms.content",
         "cms.content-image",
         "cms.button",
-        "cms.accordion"
+        "cms.accordion",
+        "cms.carousel"
       ]
     },
     "seo": {

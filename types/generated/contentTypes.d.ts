@@ -473,6 +473,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
         'cms.content-image',
         'cms.button',
         'cms.accordion',
+        'cms.carousel',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
