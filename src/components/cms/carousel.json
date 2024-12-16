@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_cms_carousels",
+  "info": {
+    "displayName": "Carousel"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "items.carousel-items"
+    }
+  }
+}
