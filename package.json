@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^4.0.11",
+    "@encoreskytech/strapi-plugin-nested-populator": "^1.2.0",
     "@strapi/plugin-cloud": "5.5.0",
     "@strapi/plugin-color-picker": "^5.5.0",
     "@strapi/plugin-users-permissions": "5.5.0",
