@@ -13,9 +13,11 @@ export interface CmsAccordion extends Struct.ComponentSchema {
 export interface CmsButton extends Struct.ComponentSchema {
   collectionName: 'components_cms_buttons';
   info: {
+    description: '';
     displayName: 'Button';
   };
   attributes: {
+    blank: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     content: Schema.Attribute.String;
     link: Schema.Attribute.String;
     style: Schema.Attribute.Enumeration<['btn-primary', 'btn-secondary']>;
