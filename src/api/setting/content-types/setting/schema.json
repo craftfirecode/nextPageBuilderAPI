@@ -4,17 +4,27 @@
   "info": {
     "singularName": "setting",
     "pluralName": "settings",
-    "displayName": "Setting"
+    "displayName": "Setting",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "nav": {
       "type": "component",
       "repeatable": true,
-      "component": "nav.nav"
+      "component": "nav.nav",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "indexPage": {
       "type": "relation",
@@ -22,14 +32,20 @@
       "target": "api::page.page"
     },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
-      "type": "media",
-      "multiple": false
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
