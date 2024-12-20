@@ -68,7 +68,6 @@ export interface CmsContentImage extends Struct.ComponentSchema {
         }
       >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    imgDark: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     reverse: Schema.Attribute.Boolean;
   };
 }
@@ -91,15 +90,12 @@ export interface CmsHero extends Struct.ComponentSchema {
 export interface CmsImage extends Struct.ComponentSchema {
   collectionName: 'components_cms_images';
   info: {
+    description: '';
     displayName: 'Image';
   };
   attributes: {
     img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    imgDark: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     imgSmall: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    imgSmallDark: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
   };
 }
 

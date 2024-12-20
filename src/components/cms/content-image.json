@@ -25,17 +25,6 @@
     "reverse": {
       "type": "boolean"
     },
-    "imgDark": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "content": {
       "type": "customField",
       "options": {
